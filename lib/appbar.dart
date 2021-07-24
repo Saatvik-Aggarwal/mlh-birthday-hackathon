@@ -3,6 +3,7 @@ import 'package:hackerguide/brainstorm.dart';
 import 'package:hackerguide/deploy.dart';
 import 'package:hackerguide/develop.dart';
 import 'package:hackerguide/idea.dart';
+import 'package:hackerguide/main.dart';
 import 'package:hackerguide/team.dart';
 
 import 'find.dart';
@@ -10,14 +11,21 @@ import 'find.dart';
 class SharedAppBar {
   AppBar build(BuildContext context) {
     return AppBar(title: const Text('HackerGuide'), actions: <Widget>[
-      TextButton(onPressed: () {}, child: const Text('What is a Hackathon')),
+      TextButton(
+          onPressed: () {
+            Navigator.of(context).pushNamed(HomePage.route);
+          },
+          child: const Text(
+            'What is a Hackathon',
+            style: TextStyle(color: Color(0xFFFCA311)),
+          )),
       TextButton(
           onPressed: () {
             Navigator.of(context).pushNamed(FindPage.route);
           },
           child: const Text('Finding a Hackathon',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFCA311),
               ))),
       TextButton(
           onPressed: () {
@@ -25,7 +33,7 @@ class SharedAppBar {
           },
           child: const Text('Finding a Team',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFCA311),
               ))),
       TextButton(
           onPressed: () {
@@ -33,7 +41,7 @@ class SharedAppBar {
           },
           child: const Text('Making an Idea',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFCA311),
               ))),
       TextButton(
           onPressed: () {
@@ -41,7 +49,7 @@ class SharedAppBar {
           },
           child: const Text('Brainstorming a Design',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFCA311),
               ))),
       TextButton(
           onPressed: () {
@@ -49,7 +57,7 @@ class SharedAppBar {
           },
           child: const Text('Creating your application',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFCA311),
               ))),
       TextButton(
           onPressed: () {
@@ -57,7 +65,7 @@ class SharedAppBar {
           },
           child: const Text('Deploying your application',
               style: TextStyle(
-                color: Colors.white,
+                color: Color(0xFFFCA311),
               ))),
     ]);
   }
