@@ -4,7 +4,7 @@ import 'package:hackerguide/appbar.dart';
 import 'find.dart';
 import 'team.dart';
 import 'idea.dart';
-import 'brainstorm.dart';
+import 'design.dart';
 import 'develop.dart';
 import 'deploy.dart';
 
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           FindPage.route: (context) => FindPage(),
           TeamPage.route: (context) => TeamPage(),
           IdeaPage.route: (context) => IdeaPage(),
-          BrainstormPage.route: (context) => BrainstormPage(),
+          DesignPage.route: (context) => DesignPage(),
           DevelopPage.route: (context) => DevelopPage(),
           DeployPage.route: (context) => DeployPage()
         });

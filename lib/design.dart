@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 
 import 'appbar.dart';
 
-class BrainstormPage extends StatefulWidget {
-  BrainstormPage({Key? key}) : super(key: key);
-  static const String route = '/brainstorm';
+class DesignPage extends StatefulWidget {
+  DesignPage({Key? key}) : super(key: key);
+  static const String route = '/design';
 
   @override
-  _BrainstormPageState createState() => _BrainstormPageState();
+  _DesignPageState createState() => _DesignPageState();
 }
 
-class _BrainstormPageState extends State<BrainstormPage> {
+class _DesignPageState extends State<DesignPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SharedAppBar().build(context),
       body: const Center(
         child: Text(
-          'This is the Brainstorm page',
+          'This is the Design page',
           style: TextStyle(fontSize: 24),
         ),
       ),

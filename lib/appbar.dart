@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hackerguide/brainstorm.dart';
+import 'package:hackerguide/design.dart';
 import 'package:hackerguide/deploy.dart';
 import 'package:hackerguide/develop.dart';
 import 'package:hackerguide/idea.dart';
@@ -45,7 +45,7 @@ class SharedAppBar {
               ))),
       TextButton(
           onPressed: () {
-            Navigator.of(context).pushNamed(BrainstormPage.route);
+            Navigator.of(context).pushNamed(DesignPage.route);
           },
           child: const Text('Brainstorming a Design',
               style: TextStyle(
