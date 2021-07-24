@@ -15,11 +15,19 @@ class _DevelopPageState extends State<DevelopPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SharedAppBar().build(context),
-      body: const Center(
-        child: Text(
-          'This is the Develop page',
-          style: TextStyle(fontSize: 24),
-        ),
+      body: ListView(
+        children: [
+          Stack(alignment: Alignment.center, children: <Widget>[
+            Image.asset(
+              "images/team_title_background.jpg",
+              height: 400,
+              width: double.infinity,
+              fit: BoxFit.cover,
+            ),
+            Text("Developing your Application",
+                style: Theme.of(context).textTheme.headline1),
+          ])
+        ],
       ),
     );
   }
