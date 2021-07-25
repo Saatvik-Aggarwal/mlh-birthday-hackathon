@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'appbar.dart';
 import 'team.dart';
 
@@ -88,11 +88,60 @@ class _FindPageState extends State<FindPage> {
                     flex: 1,
                     child: Column(
                       children: [
+                        Container(
+                      padding: EdgeInsets.all(20), child:
+                        ElevatedButton(child: Text('Major League Hacking'),
+                        onPressed: () => _launchURL('https://mlh.io/'),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),),),
+                        Container(
+                      padding: EdgeInsets.all(20), child:
+                        ElevatedButton(child: Text('Devpost'),
+                        onPressed: () => _launchURL('https://devpost.com/hackathons'),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),),),
+                        Container(
+                      padding: EdgeInsets.all(20), child:
+                        ElevatedButton(child: Text('Hacker Earth'),
+                        onPressed: () => _launchURL('https://www.hackerearth.com/challenges/hackathon/'),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),),),
+                        Container(
+                      padding: EdgeInsets.all(20), child:
+                        ElevatedButton(child: Text('Hackathon.io'),
+                        onPressed: () => _launchURL('https://www.hackathon.io/events'),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),),),
+                        
                         Padding(
                             padding: const EdgeInsets.all(16.0),
                             child: Text(
-                                'Major League Hacking\nhttps://mlh.io/\n\nDevpost\nhttps://devpost.com/hackathons\n\nHacker Earth\nhttps://www.hackerearth.com/challenges/hackathon/\n\nHackathon.io\nhttps://www.hackathon.io/events\n\nFind Others on Google!',
-                                style: Theme.of(context).textTheme.bodyText2))
+                                'Find Others on Google!',
+                                style: Theme.of(context).textTheme.bodyText2),),
                       ],
                     ),
                   ),
@@ -111,5 +160,12 @@ class _FindPageState extends State<FindPage> {
                 child: Text('Click to move to the next step: Finding a Team'))
           ],
         ));
+  }
+}
+_launchURL(String url) async {
+  if (await canLaunch(url)) {
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
   }
 }
