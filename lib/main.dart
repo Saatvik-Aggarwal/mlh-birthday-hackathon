@@ -65,23 +65,296 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: ListView(
           children: [
-            Center(
-              child: Text(
-                'This is a page title (headline1)',
-                style: Theme.of(context).textTheme.headline1,
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                    colorFilter: ColorFilter.mode(
+                        Colors.black.withOpacity(0.4), BlendMode.dstATop),
+                    image: AssetImage('images/main_title.jpg'),
+                    fit: BoxFit.cover),
+              ),
+              child: Column(
+                children: <Widget>[
+                  Container(
+                    child: Center(
+                      heightFactor: 2,
+                      child: Text(
+                        'What is a Hackathon?',
+                        style: Theme.of(context).textTheme.headline1,
+                      ),
+                    ),
+                  ),
+                  Divider(
+                    height: 0,
+                    thickness: 5,
+                    indent: MediaQuery.of(context).size.width / 2 - 30,
+                    endIndent: MediaQuery.of(context).size.width / 2 - 30,
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                        vertical: 20,
+                        horizontal: MediaQuery.of(context).size.width / 10),
+                    child: Center(
+                      heightFactor: 1.5,
+                      child: Text(
+                          'Do you want to hone your programming skills? Have fun with your friends? Win big prizes? If so, then hackathons are for you!',
+                          style: Theme.of(context).textTheme.headline5,
+                          textAlign: TextAlign.center),
+                    ),
+                  ),
+                ],
               ),
             ),
-            Center(
-              child: Text(
-                'This is a section header (headline6)',
-                style: Theme.of(context).textTheme.headline6,
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
+            Container(
+              color: const Color(0xFFE9FFF9),
+              child: Center(
+                heightFactor: 1.5,
+                child: Text('Hackathon = Hacking + Marathon',
+                    style: Theme.of(context).textTheme.headline6),
               ),
             ),
-            Center(
-              child: Text(
-                'This is some dark body text',
-                style: Theme.of(context).textTheme.bodyText2,
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: MediaQuery.of(context).size.width / 2 - 30,
+              endIndent: MediaQuery.of(context).size.width / 2 - 30,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width / 10,
+                  vertical: MediaQuery.of(context).size.width / 75),
+              color: const Color(0xFFE9FFF9),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(right: 50),
+                    width: MediaQuery.of(context).size.width / 2.5,
+                    child: Center(
+                      heightFactor: 1.5,
+                      child: Text(
+                          'The "hack" in "hackathon" refers to general programming, not to breaching computer security; in hackathons you can expect to create functional software (or hardware) that usually fits a theme. Hackathons also have a tight deadline, so you can expect to be coding for much of the day (hence "marathon").',
+                          style: Theme.of(context).textTheme.bodyText2),
+                    ),
+                  ),
+                  Container(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width *
+                              (1 / 2 - 1 / 10),
+                          maxHeight: MediaQuery.of(context).size.width / 2),
+                      child: Image(
+                        image: AssetImage('images/main_body.png'),
+                      ),
+                    ),
+                  ),
+                ],
               ),
+            ),
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
+            Container(
+              color: const Color(0xFFE9FFF9),
+              child: Center(
+                heightFactor: 1.5,
+                child: Text('The Six Steps to Start Hacking',
+                    style: Theme.of(context).textTheme.headline6),
+              ),
+            ),
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: MediaQuery.of(context).size.width / 2 - 30,
+              endIndent: MediaQuery.of(context).size.width / 2 - 30,
+            ),
+            Container(
+              color: const Color(0xFFE9FFF9),
+              child: Center(
+                heightFactor: 1.1,
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(FindPage.route);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 5 / 10,
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width/6),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('1. Finding a Hackathon',
+                                style: Theme.of(context).textTheme.bodyText2),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 5 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(TeamPage.route);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 5 / 10,
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width/6),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('2. Finding a Team',
+                                style: Theme.of(context).textTheme.bodyText2),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 5 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(IdeaPage.route);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 5 / 10,
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width/6),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('3. Making an Idea',
+                                style: Theme.of(context).textTheme.bodyText2),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 5 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(DesignPage.route);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 5 / 10,
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width/6),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('4. Brainstorming a Design',
+                                style: Theme.of(context).textTheme.bodyText2),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 5 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(DevelopPage.route);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 5 / 10,
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width/6),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('5. Creating your Application',
+                                style: Theme.of(context).textTheme.bodyText2),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 5 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(20),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(DeployPage.route);
+                        },
+                        child: Container(
+                          width: MediaQuery.of(context).size.width * 5 / 10,
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.width/6),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text('6. Deploying your Application',
+                                style: Theme.of(context).textTheme.bodyText2),
+                          ),
+                        ),
+                        style: ButtonStyle(
+                          minimumSize: MaterialStateProperty.all<Size>(
+                            Size(
+                                MediaQuery.of(context).size.width * 5 / 10, 75),
+                          ),
+                          backgroundColor: MaterialStateProperty.all<Color>(
+                              Color(0xFF809BCE)),
+                        ),
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(FindPage.route);
+              },
+              child:
+                  Text('Click to move to the next step: Finding a Hackathon'),
             ),
           ],
         ),
