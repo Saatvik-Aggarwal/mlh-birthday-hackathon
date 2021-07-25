@@ -173,7 +173,7 @@ class _TeamPageState extends State<TeamPage> {
                   alignment: Alignment.topLeft,
                   heightFactor: 1.2,
                   child: Text(
-                      '• Do something idk\n• Do another thing\n• I have no clue at this point',
+                      '• Do go to your hackathon\'s Discord or website to see specifications on how to form and register a team\n• Do pick teammates whose work and communication schedules coincide with yours\n• Do have a meeting or call with your teammates to introduce yourself, your ideas, and your skills',
                       style: Theme.of(context).textTheme.bodyText2),
                 ),
               ),
@@ -188,7 +188,7 @@ class _TeamPageState extends State<TeamPage> {
                   alignment: Alignment.topLeft,
                   heightFactor: 1.2,
                   child: Text(
-                      '• Do something idk\n• Do another thing\n• I have no clue at this point',
+                      '• Don\'t form a team that only specializes in one field; having a diverse team skillset is key to making your project unique and viable\n• Don\'t underrepresent your abilities when describing yourself to potential teammates; if you have little experience in a subject, use the hackathon as a learning experience\n• Don\'t stay in your comfort zone; if a teammate is slacking, help them with their part of the project, especially if it means learning a new skill',
                       style: Theme.of(context).textTheme.bodyText2),
                 ),
               ),
