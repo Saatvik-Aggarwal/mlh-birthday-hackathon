@@ -166,6 +166,12 @@ class _TeamPageState extends State<TeamPage> {
               ),
             ],
           ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: 20,
+            endIndent: 20,
+          ),
           Container(
             color: const Color(0xFFBCF8EC), //TODO: change color to fit theme
             child: Center(
@@ -173,6 +179,12 @@ class _TeamPageState extends State<TeamPage> {
               child: Text('Can\'t find a team?',
                   style: Theme.of(context).textTheme.headline6),
             ),
+          ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: MediaQuery.of(context).size.width / 2 - 30,
+            endIndent: MediaQuery.of(context).size.width / 2 - 30,
           ),
           Container(
             padding: EdgeInsets.all(20),
