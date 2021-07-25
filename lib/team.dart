@@ -47,7 +47,7 @@ class _TeamPageState extends State<TeamPage> {
                 Container(
                   padding: EdgeInsets.all(20),
                   //color:
-                      //const Color(0xFFFFFFFF), //TODO: change color to fit theme
+                  //const Color(0xFFFFFFFF), //TODO: change color to fit theme
                   child: Center(
                     heightFactor: 1.5,
                     child: Text(
@@ -79,7 +79,9 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: MediaQuery.of(context).size.width / 2 - 30,
           ),
           Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
             color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
@@ -109,12 +111,14 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: MediaQuery.of(context).size.width / 2 - 30,
           ),
           Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
             color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
               child: Text(
-                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                  'An ideal team spans multiple fields of programming in its combined expertise. For many hackathons, this means having some teammates dedicated to frontend, backend, machine learning, etc. Also, your team needs to be united in its vision; if you already have an idea for a project, make sure you and your teammates are on the same page.',
                   style: Theme.of(context).textTheme.bodyText2),
             ),
           ),
@@ -141,26 +145,32 @@ class _TeamPageState extends State<TeamPage> {
           Row(
             children: <Widget>[
               Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.fromLTRB(
+                    MediaQuery.of(context).size.width / 10, 50, 50, 50),
                 width: MediaQuery.of(context).size.width / 2,
+                height: 400,
                 color:
                     const Color(0xFFC9FFC2), //TODO: change color to fit theme
-                child: Center(
-                  heightFactor: 1.5,
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  heightFactor: 1.2,
                   child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                      '• Do something idk\n• Do another thing\n• I have no clue at this point',
                       style: Theme.of(context).textTheme.bodyText2),
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(20),
+                padding: EdgeInsets.fromLTRB(
+                    50, 50, MediaQuery.of(context).size.width / 10, 50),
                 width: MediaQuery.of(context).size.width / 2,
+                height: 400,
                 color:
                     const Color(0xFFFFC6D9), //TODO: change color to fit theme
-                child: Center(
-                  heightFactor: 1.5,
+                child: Align(
+                  alignment: Alignment.topLeft,
+                  heightFactor: 1.2,
                   child: Text(
-                      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+                      '• Do something idk\n• Do another thing\n• I have no clue at this point',
                       style: Theme.of(context).textTheme.bodyText2),
                 ),
               ),
@@ -187,7 +197,9 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: MediaQuery.of(context).size.width / 2 - 30,
           ),
           Container(
-            padding: EdgeInsets.all(20),
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
             color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
