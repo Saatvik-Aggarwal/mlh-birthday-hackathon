@@ -65,7 +65,7 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: 20,
           ),
           Container(
-            color: const Color(0xFFBCF8EC), //TODO: change color to fit theme
+            color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
               child: Text('Where to look for a teammate',
@@ -97,7 +97,7 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: 20,
           ),
           Container(
-            color: const Color(0xFFBCF8EC), //TODO: change color to fit theme
+            color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
               child: Text('What to look for in a team',
@@ -115,11 +115,29 @@ class _TeamPageState extends State<TeamPage> {
                 horizontal: MediaQuery.of(context).size.width / 10,
                 vertical: MediaQuery.of(context).size.width / 75),
             color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
-            child: Center(
-              heightFactor: 1.5,
-              child: Text(
-                  'An ideal team spans multiple fields of programming in its combined expertise. For many hackathons, this means having some teammates dedicated to frontend, backend, machine learning, etc. Also, your team needs to be united in its vision; if you already have an idea for a project, make sure you and your teammates are on the same page.',
-                  style: Theme.of(context).textTheme.bodyText2),
+            child: Row(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(right: 50),
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  child: Center(
+                    heightFactor: 1.5,
+                    child: Text(
+                        'An ideal team spans multiple fields of programming in its combined expertise. For many hackathons, this means having some teammates dedicated to frontend, backend, machine learning, etc. Also, your team needs to be united in its vision; if you already have an idea for a project, make sure you and your teammates are on the same page.',
+                        style: Theme.of(context).textTheme.bodyText2),
+                  ),
+                ),
+                Container(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width *(1 / 2 - 1 / 10),
+                        maxHeight: MediaQuery.of(context).size.width / 2),
+                    child: Image(
+                      image: AssetImage('images/team_text.jpg'),
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
           Divider(
@@ -129,7 +147,7 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: 20,
           ),
           Container(
-            color: const Color(0xFFBCF8EC), //TODO: change color to fit theme
+            color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
               child: Text('Do\'s and Don\'ts',
@@ -183,7 +201,7 @@ class _TeamPageState extends State<TeamPage> {
             endIndent: 20,
           ),
           Container(
-            color: const Color(0xFFBCF8EC), //TODO: change color to fit theme
+            color: const Color(0xFFE9FFF9), //TODO: change color to fit theme
             child: Center(
               heightFactor: 1.5,
               child: Text('Can\'t find a team?',
