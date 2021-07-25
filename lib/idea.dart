@@ -20,6 +20,7 @@ class _IdeaPageState extends State<IdeaPage> {
           child: ListView(
             children: [
               Container(
+                height: 400,
                 decoration: BoxDecoration(
                   image: DecorationImage(
                       image: AssetImage('images/thinkofyouridea.png'),
@@ -29,7 +30,7 @@ class _IdeaPageState extends State<IdeaPage> {
                   children: <Widget>[
                     Container(
                       child: Center(
-                        heightFactor: 2,
+                        heightFactor: 3,
                         child: Text(
                           'Think of Your Idea',
                           style: Theme.of(context).textTheme.headline1,
@@ -41,6 +42,7 @@ class _IdeaPageState extends State<IdeaPage> {
               ),
               Container(
                 color: Color.fromRGBO(19, 60, 85, 0.5),
+                padding: EdgeInsets.all(8),
                 child: Center(
                     child: Text('Reach Deep!',
                         style: Theme.of(context).textTheme.headline6)),
@@ -51,25 +53,40 @@ class _IdeaPageState extends State<IdeaPage> {
                   children: [
                     Expanded(
                       flex: 1,
-                      child: Column(
-                        children: [
-                          Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(
-                                  'Why is the idea important? After you find your team’s idea, the rest of the time you spend will solely be centered around your idea. This includes designing, developing, and deploying your new idea. This is why it is essential to create the best idea possible, in order to make your time worthwhile and give you the best chance at winning.',
-                                  style: Theme.of(context).textTheme.bodyText2))
-                        ],
-                      ),
+                      child: SizedBox(),
                     ),
                     Expanded(
-                      flex: 1,
-                      child: Column(
-                        children: [Image.asset('images/ideaimage1.png')],
+                        flex: 3,
+                        child: Container(
+                            height: 600,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: Image.asset('images/ideaimage1.png')
+                                        .image)))),
+                    Expanded(
+                      flex: 6,
+                      child: Container(
+                        padding: EdgeInsets.zero,
+                        height: 600,
+                        child: Card(
+                          margin: EdgeInsets.all(100),
+                          child: Padding(
+                            padding: EdgeInsets.all(36),
+                            child: Center(
+                              child: Text(
+                                'Why is the idea important? After you find your team’s idea, the rest of the time you spend will solely be centered around your idea. This includes designing, developing, and deploying your new idea. This is why it is essential to create the best idea possible, in order to make your time worthwhile and give you the best chance at winning.',
+                                softWrap: true,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
+              Container(height: 100, color: Color.fromRGBO(19, 60, 85, 0.5)),
               Container(
                 color: Color.fromRGBO(204, 2, 2, 0.5),
                 child: Center(
@@ -79,7 +96,8 @@ class _IdeaPageState extends State<IdeaPage> {
               Container(
                 color: Color.fromRGBO(204, 2, 2, 0.5),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(
+                      left: 200, right: 200, top: 25, bottom: 10),
                   child: Text(
                     'When you brainstorm, the main goal is to dump out as many ideas as possible to review with your team. After all, if you never write down a good idea no one will know. However, there should be some loose boundaries for your mind to follow as you jot down ideas.',
                     style: Theme.of(context).textTheme.bodyText2,
@@ -98,7 +116,8 @@ class _IdeaPageState extends State<IdeaPage> {
               Container(
                 color: Color.fromRGBO(204, 2, 2, 0.5),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(
+                      left: 100, right: 100, top: 10, bottom: 10),
                   child: Table(
                     border: TableBorder.all(),
                     children: [
@@ -173,7 +192,7 @@ class _IdeaPageState extends State<IdeaPage> {
               Container(
                 color: Color.fromRGBO(204, 2, 2, 0.5),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12),
                   child: Center(
                     child: Text(
                       'Make 10-20 ideas! The more you make, the more opportunities for your team',
@@ -193,33 +212,43 @@ class _IdeaPageState extends State<IdeaPage> {
                 child: Row(
                   children: [
                     Expanded(
-                      flex: 1,
-                      child: Center(
-                        child: Column(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
+                      flex: 8,
+                      child: Container(
+                        padding: EdgeInsets.only(
+                            left: 200, right: 200, top: 100, bottom: 100),
+                        height: 600,
+                        child: const Card(
+                          margin: EdgeInsets.zero,
+                          color: Color(0xFF809BCE),
+                          child: Padding(
+                            padding: EdgeInsets.all(16.0),
+                            child: Center(
                               child: Text(
-                                  "Now that you have your ideas, your team should pick one, but make sure to keep note of these rules:\n• Can your team understand the idea?\n• Is it unique and does it solve a real world problem?\n• Does it align to a hackathon theme?\n• If it involves hardware, is the hardware simple enough to design and deploy?"),
-                            )
-                          ],
+                                "Now that you have your ideas, your team should pick one, but make sure to keep note of these rules:\n• Can your team understand the idea?\n• Is it unique and does it solve a real world problem?\n• Does it align to a hackathon theme?\n• If it involves hardware, is the hardware simple enough to design and deploy?",
+                                softWrap: true,
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
                     Expanded(
-                        flex: 1,
-                        child: Center(
-                          child: Column(
-                            children: [Image.asset('images/ideaimage2.png')],
-                          ),
-                        )),
+                        flex: 3,
+                        child: Container(
+                            height: 600,
+                            decoration: BoxDecoration(
+                                image: DecorationImage(
+                                    fit: BoxFit.cover,
+                                    image: Image.asset('images/ideaimage2.png')
+                                        .image))))
                   ],
                 ),
               ),
               Container(
                 color: Color.fromRGBO(252, 163, 17, 0.5),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.only(
+                      left: 100, right: 100, top: 10, bottom: 10),
                   child: Table(
                     border: TableBorder.all(),
                     children: [
@@ -297,9 +326,12 @@ class _IdeaPageState extends State<IdeaPage> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
-                      child: Text(
-                          'Most of these ideas are not that complicated! After all, everyone has the same couple of days to finish their hack.\n\n\nYou don’t have to win 1st place – most hackathons have lots of different categories for prizes. Aim for one specifically and your team can achieve it!',
-                          style: Theme.of(context).textTheme.bodyText2)),
+                    child: Text(
+                      'Most of these ideas are not that complicated! After all, everyone has the same couple of days to finish their hack.\n\n\nYou don’t have to win 1st place – most hackathons have lots of different categories for prizes. Aim for one specifically and your team can achieve it!',
+                      style: Theme.of(context).textTheme.bodyText2,
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
               ),
               Padding(
