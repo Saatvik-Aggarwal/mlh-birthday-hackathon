@@ -154,12 +154,14 @@ class _DevelopPageState extends State<DevelopPage> {
                                 Center(
                                     child: Text(
                                   "Front Ends",
-                                  style: Theme.of(context).textTheme.headline3,
+                                  style: const TextStyle(
+                                      fontSize: 36, color: Color(0xFFFCA311)),
                                 )),
-                                const Center(
+                                Center(
                                     child: Text(
                                   "A frontend is what your user will see. Click on any frontend to select it. Doing so will highlight specific backends that might be easier to use with that frontend. Click on the selected frontend again to open up the frontend's home page to learn more.",
                                   textAlign: TextAlign.center,
+                                  style: Theme.of(context).textTheme.bodyText1,
                                 )),
                                 SizedBox(
                                   height: 20,
@@ -223,14 +225,15 @@ class _DevelopPageState extends State<DevelopPage> {
                             child: Column(
                               children: [
                                 Center(
-                                    child: Text(
-                                  "Back Ends",
-                                  style: Theme.of(context).textTheme.headline3,
-                                )),
-                                const Center(
+                                    child: Text("Back Ends",
+                                        style: const TextStyle(
+                                            fontSize: 36,
+                                            color: Color(0xFFFCA311)))),
+                                Center(
                                     child: Text(
                                   "A backend makes any connections to your database(s) or private servers, so the user's device doesn't have to. Backends often contain sensitive credentials that you should make sure stay private. These backends are some of the best and easiest to use.",
                                   textAlign: TextAlign.center,
+                                  style: Theme.of(context).textTheme.bodyText1,
                                 )),
                                 SizedBox(
                                   height: 20,

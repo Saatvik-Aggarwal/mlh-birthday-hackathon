@@ -52,7 +52,8 @@ class _FindPageState extends State<FindPage> {
                     child: Column(
                       children: [
                         Padding(
-                            padding: const EdgeInsets.all(16.0),
+                            padding: const EdgeInsets.only(
+                                left: 100, top: 25, bottom: 25, right: 25),
                             child: Text(
                                 '1. General Info: What time is the hackathon? Can you make it and are you free for the work block?\n2. Size: Is it a large hackathon with big prizes or one with few people signed up?\n3. Theme: What is the theme of the hackathon? This will influence what you build.\n4. Level: Is it recommended for beginners or college graduates?\n5. What is the team size?\n',
                                 style: Theme.of(context).textTheme.bodyText2))
@@ -89,59 +90,73 @@ class _FindPageState extends State<FindPage> {
                     child: Column(
                       children: [
                         Container(
-                      padding: EdgeInsets.all(20), child:
-                        ElevatedButton(child: Text('Major League Hacking'),
-                        onPressed: () => _launchURL('https://mlh.io/'),
-                        style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all<Size>(
-                            Size(
-                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          padding: EdgeInsets.all(20),
+                          child: ElevatedButton(
+                            child: Text('Major League Hacking'),
+                            onPressed: () => _launchURL('https://mlh.io/'),
+                            style: ButtonStyle(
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                Size(MediaQuery.of(context).size.width * 4 / 10,
+                                    75),
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Color(0xFF809BCE)),
+                            ),
                           ),
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFF809BCE)),
-                        ),),),
+                        ),
                         Container(
-                      padding: EdgeInsets.all(20), child:
-                        ElevatedButton(child: Text('Devpost'),
-                        onPressed: () => _launchURL('https://devpost.com/hackathons'),
-                        style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all<Size>(
-                            Size(
-                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          padding: EdgeInsets.all(20),
+                          child: ElevatedButton(
+                            child: Text('Devpost'),
+                            onPressed: () =>
+                                _launchURL('https://devpost.com/hackathons'),
+                            style: ButtonStyle(
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                Size(MediaQuery.of(context).size.width * 4 / 10,
+                                    75),
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Color(0xFF809BCE)),
+                            ),
                           ),
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFF809BCE)),
-                        ),),),
+                        ),
                         Container(
-                      padding: EdgeInsets.all(20), child:
-                        ElevatedButton(child: Text('Hacker Earth'),
-                        onPressed: () => _launchURL('https://www.hackerearth.com/challenges/hackathon/'),
-                        style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all<Size>(
-                            Size(
-                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          padding: EdgeInsets.all(20),
+                          child: ElevatedButton(
+                            child: Text('Hacker Earth'),
+                            onPressed: () => _launchURL(
+                                'https://www.hackerearth.com/challenges/hackathon/'),
+                            style: ButtonStyle(
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                Size(MediaQuery.of(context).size.width * 4 / 10,
+                                    75),
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Color(0xFF809BCE)),
+                            ),
                           ),
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFF809BCE)),
-                        ),),),
+                        ),
                         Container(
-                      padding: EdgeInsets.all(20), child:
-                        ElevatedButton(child: Text('Hackathon.io'),
-                        onPressed: () => _launchURL('https://www.hackathon.io/events'),
-                        style: ButtonStyle(
-                          minimumSize: MaterialStateProperty.all<Size>(
-                            Size(
-                                MediaQuery.of(context).size.width * 4 / 10, 75),
+                          padding: EdgeInsets.all(20),
+                          child: ElevatedButton(
+                            child: Text('Hackathon.io'),
+                            onPressed: () =>
+                                _launchURL('https://www.hackathon.io/events'),
+                            style: ButtonStyle(
+                              minimumSize: MaterialStateProperty.all<Size>(
+                                Size(MediaQuery.of(context).size.width * 4 / 10,
+                                    75),
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                  Color(0xFF809BCE)),
+                            ),
                           ),
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              Color(0xFF809BCE)),
-                        ),),),
-                        
+                        ),
                         Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: Text(
-                                'Find Others on Google!',
-                                style: Theme.of(context).textTheme.bodyText2),),
+                          padding: const EdgeInsets.all(16.0),
+                          child: Text('Find Others on Google!',
+                              style: Theme.of(context).textTheme.bodyText2),
+                        ),
                       ],
                     ),
                   ),
@@ -162,6 +177,7 @@ class _FindPageState extends State<FindPage> {
         ));
   }
 }
+
 _launchURL(String url) async {
   if (await canLaunch(url)) {
     await launch(url);

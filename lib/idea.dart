@@ -343,9 +343,11 @@ class _IdeaPageState extends State<IdeaPage> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
-                    child: Text(
-                        'No matter if it’s a hackathon or science fair, people always say the idea is the hardest part. Now that you have an idea, your team has a defined purpose: finish the hack by the deadline and have fun!',
-                        style: Theme.of(context).textTheme.bodyText2)),
+                  child: Text(
+                      'No matter if it’s a hackathon or science fair, people always say the idea is the hardest part. Now that you have an idea, your team has a defined purpose: finish the hack by the deadline and have fun!',
+                      style: Theme.of(context).textTheme.bodyText2,
+                      textAlign: TextAlign.center),
+                ),
               ),
               TextButton(
                   onPressed: () {
