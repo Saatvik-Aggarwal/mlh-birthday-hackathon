@@ -20,14 +20,31 @@ class _IdeaPageState extends State<IdeaPage> {
           child: ListView(
             children: [
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 500,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      fit: BoxFit.fill,
-                      image: AssetImage("images/thinkofyouridea.png"),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('images/thinkofyouridea.png'),
+                      fit: BoxFit.cover),
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      child: Center(
+                        heightFactor: 2,
+                        child: Text(
+                          'Think of Your Idea',
+                          style: Theme.of(context).textTheme.headline1,
+                        ),
+                      ),
                     ),
-                  )),
+                  ],
+                ),
+              ),
+              Divider(
+                height: 0,
+                thickness: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
               Center(
                   child: Text('Reach Deep!',
                       style: Theme.of(context).textTheme.headline6)),
@@ -40,7 +57,7 @@ class _IdeaPageState extends State<IdeaPage> {
                         Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Text(
-                                'Why is the idea important? After you find your team’s idea, the rest of the time will always be centered around your idea. This includes After you find your team’s idea, the rest of the time will always be centered around your idea. This includes After you find your team’s idea, the rest of the time will always be centered around your idea. This includes',
+                                'Why is the idea important? After you find your team’s idea, the rest of the time you spend will solely be centered around your idea. This includes designing, developing, and deploying your new idea. This is why it is essential to create the best idea possible, in order to make your time worthwhile and give you the best chance at winning.',
                                 style: Theme.of(context).textTheme.bodyText2))
                       ],
                     ),
@@ -52,6 +69,12 @@ class _IdeaPageState extends State<IdeaPage> {
                     ),
                   )
                 ],
+              ),
+              Divider(
+                height: 0,
+                thickness: 5,
+                indent: 20,
+                endIndent: 20,
               ),
               Center(
                   child: Text('Brainsplat Ideas',
@@ -67,7 +90,7 @@ class _IdeaPageState extends State<IdeaPage> {
                 child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                        "A good idea: \n1. Is within your team's abilities AND timeline\n2. Solves a real world problem\n3. Is not overdone (unique solution)\n4. Word broke bullets\n5. Follows hackathon theme/prize categories")),
+                        "A good idea: \n1. Is within your team's abilities AND timeline\n2. Solves a real world problem\n3. Is not overdone (unique solution)\n4. Follows hackathon theme/prize categories")),
               ),
               Container(
                 margin: EdgeInsets.all(10),
@@ -101,20 +124,6 @@ class _IdeaPageState extends State<IdeaPage> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
-                          child:
-                              Text('App that shows the stats of Valorant guns'),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child:
-                            Center(child: Text('Already done, not many uses')),
-                      ),
-                    ]),
-                    TableRow(children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
                           child: Text('4 Function Calculator App'),
                         ),
                       ),
@@ -133,8 +142,8 @@ class _IdeaPageState extends State<IdeaPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child:
-                            Center(child: Text('Why? What problem is this?')),
+                        child: Center(
+                            child: Text('What problem does this solve?')),
                       ),
                     ]),
                     TableRow(children: [
@@ -162,6 +171,12 @@ class _IdeaPageState extends State<IdeaPage> {
                   ),
                 ),
               ),
+              Divider(
+                height: 0,
+                thickness: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
               Center(
                   child: Text('Picking an Idea',
                       style: Theme.of(context).textTheme.headline6)),
@@ -172,8 +187,11 @@ class _IdeaPageState extends State<IdeaPage> {
                     child: Center(
                       child: Column(
                         children: [
-                          Text(
-                              "Now that you have your ideas, your team should pick one\nKeep note of the 5 good ideas rules, but in a different context:\n• Can your team understand the idea?\n• Is it unique and does it solve a real world problem?\n• Does it align to a hackathon?\n• If it involves hardware, is the hardware simple?\n (It's not an engineering competition)")
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                                "Now that you have your ideas, your team should pick one, but make sure to keep note of these rules:\n• Can your team understand the idea?\n• Is it unique and does it solve a real world problem?\n• Does it align to a hackathon theme?\n• If it involves hardware, is the hardware simple enough to design and deploy?"),
+                          )
                         ],
                       ),
                     ),
@@ -210,40 +228,41 @@ class _IdeaPageState extends State<IdeaPage> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
-                          child: Text('HELP I HAVE THE BIG RONA'),
+                          child: Text('FindMe'),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Center(child: Text('Covid app that identifies')),
+                        child: Center(child: Text('Travel checklist app')),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child:
-                            Center(child: Text('1st Place hardware bfn hacks')),
+                        child: Center(child: Text('1st Place Overall')),
                       ),
                     ]),
                     TableRow(children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
-                          child: Text('LETS GOOOOOOOOO!'),
+                          child: Text('Travelisory'),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Center(child: Text('')),
+                        child: Center(
+                            child: Text(
+                                'Helps plan vacations with a 3D interactable map')),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Center(child: Text('Best use of PoggersDB')),
+                        child: Center(child: Text('Best use of CockroachDB')),
                       ),
                     ]),
                     TableRow(children: [
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Center(
-                          child: Text('Raspberry Pi Trackthing'),
+                          child: Text('Locate My Luggage'),
                         ),
                       ),
                       Padding(
@@ -253,9 +272,7 @@ class _IdeaPageState extends State<IdeaPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                            child:
-                                Text('1st Place hardware gang Hackython 2023')),
+                        child: Center(child: Text('3rd Place Overall')),
                       ),
                     ]),
                   ],
@@ -268,10 +285,16 @@ class _IdeaPageState extends State<IdeaPage> {
                         'Most of these ideas are not that complicated! After all, everyone has the same couple of days to finish their hack.\n\n\nYou don’t have to win 1st place – most hackathons have lots of different categories for prizes. Aim for one specifically and your team can achieve it!',
                         style: Theme.of(context).textTheme.bodyText2)),
               ),
+              Divider(
+                height: 0,
+                thickness: 5,
+                indent: 20,
+                endIndent: 20,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Center(
-                    child: Text('All done?',
+                    child: Text('Got your idea?',
                         style: Theme.of(context).textTheme.headline6)),
               ),
               Padding(
