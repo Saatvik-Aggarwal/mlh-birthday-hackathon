@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'appbar.dart';
+import 'design.dart';
 
 class IdeaPage extends StatefulWidget {
   IdeaPage({Key? key}) : super(key: key);
@@ -273,7 +274,7 @@ class _IdeaPageState extends State<IdeaPage> {
               ),
               TextButton(
                   onPressed: () {
-                    Navigator.of(context).pushNamed();
+                    Navigator.of(context).pushNamed(DesignPage.route);
                   },
                   child: Text('Click to move to the next step: Design'))
             ],
