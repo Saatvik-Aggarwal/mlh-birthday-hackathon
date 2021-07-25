@@ -166,6 +166,57 @@ class HomePage extends StatelessWidget {
               color: const Color(0xFFE9FFF9),
               child: Center(
                 heightFactor: 1.5,
+                child: Text('Why Hack?',
+                    style: Theme.of(context).textTheme.headline6),
+              ),
+            ),
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: MediaQuery.of(context).size.width / 2 - 30,
+              endIndent: MediaQuery.of(context).size.width / 2 - 30,
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width / 10,
+                  vertical: MediaQuery.of(context).size.width / 75),
+              color: const Color(0xFFE9FFF9),
+              child: Row(
+                children: <Widget>[
+                  Container(
+                    padding: EdgeInsets.only(right: 50),
+                    width: MediaQuery.of(context).size.width / 2,
+                    child: Center(
+                      heightFactor: 1.5,
+                      child: Text(
+                          'There are many reasons to compete in a hackathon. Other than the prizes (which are often worthwhile), hackathons also improve your programming skills, expand your fields of expertise, and get you accustomed to coding under pressure and time. Thus, hackathons are an invaluable method of job preparation. Likewise, hackathons encourage extensive teambuilding, communication, and planning. Finally, hackathons are fun, especially if you follow some easy steps to get the most out of your hackathons.',
+                          style: Theme.of(context).textTheme.bodyText2),
+                    ),
+                  ),
+                  Container(
+                    child: ConstrainedBox(
+                      constraints: BoxConstraints(
+                          maxWidth: MediaQuery.of(context).size.width *
+                              (1 / 2 - 1 / 10),
+                          maxHeight: MediaQuery.of(context).size.width / 2),
+                      child: Image(
+                        image: AssetImage('images/main_collage.jpg'),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(
+              height: 0,
+              thickness: 5,
+              indent: 20,
+              endIndent: 20,
+            ),
+            Container(
+              color: const Color(0xFFE9FFF9),
+              child: Center(
+                heightFactor: 1.5,
                 child: Text('The Six Steps to Start Hacking',
                     style: Theme.of(context).textTheme.headline6),
               ),
