@@ -242,7 +242,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 5 / 10,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width/6),
+                              left: MediaQuery.of(context).size.width / 6),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text('1. Finding a Hackathon',
@@ -268,7 +268,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 5 / 10,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width/6),
+                              left: MediaQuery.of(context).size.width / 6),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text('2. Finding a Team',
@@ -294,7 +294,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 5 / 10,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width/6),
+                              left: MediaQuery.of(context).size.width / 6),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text('3. Making an Idea',
@@ -320,7 +320,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 5 / 10,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width/6),
+                              left: MediaQuery.of(context).size.width / 6),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text('4. Brainstorming a Design',
@@ -346,7 +346,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 5 / 10,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width/6),
+                              left: MediaQuery.of(context).size.width / 6),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text('5. Creating your Application',
@@ -372,7 +372,7 @@ class HomePage extends StatelessWidget {
                         child: Container(
                           width: MediaQuery.of(context).size.width * 5 / 10,
                           padding: EdgeInsets.only(
-                              left: MediaQuery.of(context).size.width/6),
+                              left: MediaQuery.of(context).size.width / 6),
                           child: Align(
                             alignment: Alignment.topLeft,
                             child: Text('6. Deploying your Application',
@@ -389,7 +389,6 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                     ),
-
                   ],
                 ),
               ),
