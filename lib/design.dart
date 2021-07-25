@@ -30,7 +30,7 @@ class _DesignPageState extends State<DesignPage> {
                   child: Center(
                     heightFactor: 2,
                     child: Text(
-                      'Design Your App',
+                      'Brainstorming a Design',
                       style: Theme.of(context).textTheme.headline1,
                     ),
                   ),
@@ -47,69 +47,80 @@ class _DesignPageState extends State<DesignPage> {
           Container(
             color: Color.fromRGBO(128, 155, 206, 1),
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  child: Container(
-                    color: Color.fromRGBO(128, 155, 206, 1),
-                    child: Text('Know Your Team',
-                        style: Theme.of(context).textTheme.headline6),
-                  ),
-                ),
-              ),
+              heightFactor: 1.5,
+              child: Text('Know Your Team',
+                  style: Theme.of(context).textTheme.headline6),
             ),
           ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: MediaQuery.of(context).size.width / 2 - 30,
+            endIndent: MediaQuery.of(context).size.width / 2 - 30,
+          ),
           Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
             color: Color.fromRGBO(128, 155, 206, 1),
             child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [
-                      Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                              'Every team is different, as everyone has unique skills. When you move into the design phase, start framing your app’s features. During ideas, your idea was only a short sentence, but during design you will plan out all the features and UI. If your team is new, start simple; if your team has a lot of graphics experience, have them work on the initial pathfinder and structure.',
-                              style: Theme.of(context).textTheme.bodyText2))
-                    ],
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(right: 50),
+                  width: MediaQuery.of(context).size.width * 2 / 3,
+                  child: Center(
+                    heightFactor: 1.5,
+                    child: Text(
+                        'Every team is different, as everyone has unique skills. When you move into the design phase, start framing your app’s features. During ideas, your idea was only a short sentence, but during design you will plan out all the features and UI. If your team is new, start simple; if your team has a lot of graphics experience, have them work on the initial pathfinder and structure.',
+                        style: Theme.of(context).textTheme.bodyText2),
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [Image.asset('images/ideaimage1.png')],
+                Container(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width *(1 / 2 - 1 / 10),
+                        maxHeight: MediaQuery.of(context).size.width / 2),
+                    child: Image(
+                      image: AssetImage('images/ideaimage1.png'),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
-          Container(
-            color: Color.fromRGBO(188, 248, 236, 1),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Text('Find Features',
-                      style: Theme.of(context).textTheme.headline6),
-                ),
-              ),
-            ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: 20,
+            endIndent: 20,
           ),
           Container(
             color: Color.fromRGBO(188, 248, 236, 1),
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Text(
-                      'Remember the features you thought about during brainstorming. Now is the time to go more in depth on what your app will do.',
-                      style: Theme.of(context).textTheme.bodyText2),
-                ),
-              ),
+              heightFactor: 1.5,
+              child: Text('Find Features',
+                  style: Theme.of(context).textTheme.headline6),
             ),
           ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: MediaQuery.of(context).size.width / 2 - 30,
+            endIndent: MediaQuery.of(context).size.width / 2 - 30,
+          ),
           Container(
+                  padding: EdgeInsets.symmetric(vertical:20, horizontal:MediaQuery.of(context).size.width / 10),
+                  color: Color.fromRGBO(188, 248, 236, 1),
+                  child: Center(
+                    heightFactor: 1.5,
+                    child: Text(
+                        'Remember the features you thought about during brainstorming. Now is the time to go more in depth on what your app will do.',
+                        style: Theme.of(context).textTheme.headline5),
+                  ),
+                ),
+          
+          Container(
+            padding: EdgeInsets.symmetric(vertical:20, horizontal: MediaQuery.of(context).size.width/10),
             color: Color.fromRGBO(188, 248, 236, 1),
             child: Table(
               border: TableBorder.all(),
@@ -158,103 +169,156 @@ class _DesignPageState extends State<DesignPage> {
             ),
           ),
           Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
             color: Color.fromRGBO(188, 248, 236, 1),
             child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  child: Text(
-                      'Remember, the amount of features you put is what you should be working on for the rest of the hackathon. Don’t put more than you can feasibly complete.',
-                      style: Theme.of(context).textTheme.bodyText2),
-                ),
-              ),
+              heightFactor: 1.5,
+              child: Text(
+                  'Remember, the amount of features you put is what you should be working on for the rest of the hackathon. Don’t put more than you can feasibly complete.',
+                  style: Theme.of(context).textTheme.bodyText2),
             ),
           ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: 20,
+            endIndent: 20,
+          ),
+
+
           Container(
             color: Colors.black,
             child: Center(
-              child: Expanded(
-                child: Text("Let's Visualize",
-                    style: Theme.of(context).textTheme.headline6),
-              ),
+              heightFactor: 1.5,
+              child: Text('Let\'s Visualize',
+                  style: Theme.of(context).textTheme.headline6),
             ),
           ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: MediaQuery.of(context).size.width / 2 - 30,
+            endIndent: MediaQuery.of(context).size.width / 2 - 30,
+          ),
           Container(
-            color: Colors.black,
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
+            color: Colors.black, 
             child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [
-                      Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Text(
-                              'The problem with ideas is that every team member will have a different visual picture of how an idea should be executed and viewed by the user. Before a single line of code is made, centralize everyone’s vision by creating a visual “prototype”. It can be done in Paint, Word, or anything that produces a simple image your team can understand and implement into an app. Flowcharts are also useful for app actions and interactions.\n\nMaking a visual:\n• Identifies UI elements required\n• Creates a blueprint for interactive use\n• Defines colors and layout\n• Programmers work to create visual using platform',
-                              style: Theme.of(context).textTheme.bodyText1))
-                    ],
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(right: 50),
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  child: Center(
+                    heightFactor: 1.5,
+                    child: Text(
+                        'The problem with ideas is that every team member will have a different visual picture of how an idea should be executed and viewed by the user. Before a single line of code is made, centralize everyone’s vision by creating a visual “prototype”. It can be done in Paint, Word, or anything that produces a simple image your team can understand and implement into an app. Flowcharts are also useful for app actions and interactions.\n\nMaking a visual:\n• Identifies UI elements required\n• Creates a blueprint for interactive use\n• Defines colors and layout\n• Programmers work to create visual using platform',
+                        style: Theme.of(context).textTheme.bodyText1),
                   ),
                 ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [Image.asset('images/designimage1.png')],
+                Container(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width *(1 / 2 - 1 / 10),
+                        maxHeight: MediaQuery.of(context).size.width / 2),
+                    child: Image(
+                      image: AssetImage('images/designimage1.png'),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           ),
+
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: 20,
+            endIndent: 20,
+          ),
+          
           Container(
-            color: Color.fromRGBO(128, 128, 128, 1),
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  child: Text(
+                  padding: EdgeInsets.all(20),
+                  color: Color.fromRGBO(128, 128, 128, 1),
+                  child: Center(
+                    heightFactor: 1.5,
+                    child: Text(
                       'Here is an example of a idea (this website) visualized in Word',
                       style: Theme.of(context).textTheme.bodyText2),
+                  ),
                 ),
-              ),
+
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: MediaQuery.of(context).size.width / 2 - 30,
+            endIndent: MediaQuery.of(context).size.width / 2 - 30,
+          ),
+
+          Container(
+             padding: EdgeInsets.symmetric(
+                 horizontal: MediaQuery.of(context).size.width / 3,
+                 vertical: MediaQuery.of(context).size.width / 75),
+            color: Color.fromRGBO(128, 128, 128, 1),
+            child: Center(child:
+              
+                ConstrainedBox(
+                    constraints: BoxConstraints(
+                        maxWidth: MediaQuery.of(context).size.width *(1 / 2 - 1 / 10),
+                        maxHeight: MediaQuery.of(context).size.width / 2),
+                    child: Image(
+                      image: AssetImage('images/designimage3.png'),
+                    ),
+                  ),
+                
+              
             ),
+          ),
+          
+          
+
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: 20,
+            endIndent: 20,
           ),
           Container(
-            color: Color.fromRGBO(128, 128, 128, 1),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [Image.asset('images/designimage2.png')],
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    children: [Image.asset('images/designimage3.png')],
-                  ),
-                )
-              ],
+            
+            child: Center(
+              heightFactor: 1.5,
+              child: Text('Got your design?',
+                  style: Theme.of(context).textTheme.headline6),
             ),
           ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Text("Got your design?",
-                    style: Theme.of(context).textTheme.headline6),
-              ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: MediaQuery.of(context).size.width / 2 - 30,
+            endIndent: MediaQuery.of(context).size.width / 2 - 30,
+          ),
+          Container(
+            padding: EdgeInsets.symmetric(
+                horizontal: MediaQuery.of(context).size.width / 10,
+                vertical: MediaQuery.of(context).size.width / 75),
+            
+            child: Center(
+              heightFactor: 1.5,
+              child: Text(
+                  'The visual is the last idea-based hurdle to your project. It’s time to get the code working!',
+                  style: Theme.of(context).textTheme.bodyText2),
             ),
           ),
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                child: Text(
-                    'The visual is the last idea-based hurdle to your project. It’s time to get the code working!',
-                    style: Theme.of(context).textTheme.bodyText2),
-              ),
-            ),
+          Divider(
+            height: 0,
+            thickness: 5,
+            indent: 20,
+            endIndent: 20,
           ),
+
           TextButton(
               onPressed: () {
                 Navigator.of(context).pushNamed(DevelopPage.route);
