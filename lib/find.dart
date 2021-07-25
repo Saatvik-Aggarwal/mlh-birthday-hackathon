@@ -52,7 +52,7 @@ class _FindPageState extends State<FindPage> {
                     child: Column(
                       children: [
                         Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Text(
                                 '1. General Info: What time is the hackathon? Can you make it and are you free for the work block?\n2. Size: Is it a large hackathon with big prizes or one with few people signed up?\n3. Theme: What is the theme of the hackathon? This will influence what you build.\n4. Level: Is it recommended for beginners or college graduates?\n5. What is the team size?\n',
                                 style: Theme.of(context).textTheme.bodyText2))
@@ -69,7 +69,13 @@ class _FindPageState extends State<FindPage> {
               ),
             ),
             Container(
-              color: Color.fromRGBO(19, 60, 85, 0.5),
+              color: const Color(0xFFC9FFC2),
+              child: Center(
+                  child: Text('Common Hackathon Locations',
+                      style: Theme.of(context).textTheme.headline6)),
+            ),
+            Container(
+              color: const Color(0xFFC9FFC2),
               child: Row(
                 children: [
                   Expanded(
@@ -83,9 +89,9 @@ class _FindPageState extends State<FindPage> {
                     child: Column(
                       children: [
                         Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(16.0),
                             child: Text(
-                                'Major League Hacking\nhttps://mlh.io/\n\nDevpost\nhttps://devpost.com/hackathons\n\nHacker Earth\nhttps://www.hackerearth.com/challenges/hackathon/\n\nHackathon.io\nhttps://www.hackathon.io/events\n\nGoogle',
+                                'Major League Hacking\nhttps://mlh.io/\n\nDevpost\nhttps://devpost.com/hackathons\n\nHacker Earth\nhttps://www.hackerearth.com/challenges/hackathon/\n\nHackathon.io\nhttps://www.hackathon.io/events\n\nFind Others on Google!',
                                 style: Theme.of(context).textTheme.bodyText2))
                       ],
                     ),
