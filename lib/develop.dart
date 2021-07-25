@@ -27,9 +27,33 @@ class _DevelopPageState extends State<DevelopPage> {
             Text("Developing your Application",
                 style: Theme.of(context).textTheme.headline1),
           ]),
-          Text(
-            "You've got an amazing team, idea, and initial design. Now what? How do you turn your idea into reality?",
-            style: Theme.of(context).textTheme.headline5,
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Center(
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "Turning your design into reality",
+                    style: Theme.of(context).textTheme.headline6,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: Center(
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Text(
+                  "You've got an amazing team, idea, and initial design. Now what? How do you turn your idea into reality?",
+                  style: Theme.of(context).textTheme.headline5,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
           )
         ],
       ),
