@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'appbar.dart';
+import 'develop.dart';
 
 class DesignPage extends StatefulWidget {
   DesignPage({Key? key}) : super(key: key);
@@ -137,7 +138,7 @@ class _DesignPageState extends State<DesignPage> {
                     Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
-                            'Every team is different, with everyone’s skills. When you move into the design phase, start framing your app’s features. During ideas your idea was only a short sentence, but during design you’ll plan out all thefeatures and UI. If your team is new, start simple; if your team has a lot of graphics experience, have them work on the initial pathfinder for looks.',
+                            'The problem with ideas is normally, every team member will have a different visual memory on how an idea should be executed and viewed by the user. Before a single line of code is made, centralize everyone’s vision by creating a visual “prototype”. It can be done in Paint or Word,anything that produces a simple image your team can understand and implement into an app. Flowcharts are also useful for app actions and interactions.\nMaking a visual:\n• Identifies UI elements required\n• Creates a blueprint for interactive use\n• Defines colors and layout\n• Programmers work to create visual using platform',
                             style: Theme.of(context).textTheme.bodyText2))
                   ],
                 ),
@@ -145,11 +146,60 @@ class _DesignPageState extends State<DesignPage> {
               Expanded(
                 flex: 1,
                 child: Column(
-                  children: [Image.asset('images/ideaimage1.png')],
+                  children: [Image.asset('images/designimage1.png')],
                 ),
               )
             ],
           ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text('Here is this website Visualized in Word',
+                    style: Theme.of(context).textTheme.bodyText2),
+              ),
+            ),
+          ),
+          Row(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [Image.asset('images/designimage2.png')],
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [Image.asset('images/designimage3.png')],
+                ),
+              )
+            ],
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text("Got your visual?",
+                    style: Theme.of(context).textTheme.headline6),
+              ),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                child: Text(
+                    'The visual is the last idea-based hurdle to your project. It’s time to get the code working!',
+                    style: Theme.of(context).textTheme.bodyText2),
+              ),
+            ),
+          ),
+          TextButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed(DevelopPage.route);
+              },
+              child: Text('Click to move to the next step: Develop'))
         ]),
       ),
     );
