@@ -26,7 +26,11 @@ class _DevelopPageState extends State<DevelopPage> {
             ),
             Text("Developing your Application",
                 style: Theme.of(context).textTheme.headline1),
-          ])
+          ]),
+          Text(
+            "You've got an amazing team, idea, and initial design. Now what? How do you turn your idea into reality?",
+            style: Theme.of(context).textTheme.headline5,
+          )
         ],
       ),
     );
