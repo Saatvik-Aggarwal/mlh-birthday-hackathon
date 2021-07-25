@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:hackerguide/deploy.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'appbar.dart';
 
 class DevelopPage extends StatefulWidget {
@@ -12,14 +13,23 @@ class DevelopPage extends StatefulWidget {
 
 class _DevelopPageState extends State<DevelopPage> {
   List<End> frontends = [
-    End("Flutter", []),
-    End("ReactJS", ["Django"]),
-    End("React Native", []),
-    End("NextJS", [])
+    End("Flutter", ["ExpressJS"], "https://flutter.dev"),
+    End("React", ["Django", "ExpressJS"], "https://reactjs.org/"),
+    End("NextJS", ["ExpressJS"], "https://nextjs.org/"),
+    End("Vue.js", ["ExpressJS", "Laravel"],
+        "https://v3.vuejs.org/guide/introduction.html"),
+    End("AngularJS", ["ExpressJS"], "https://angularjs.org/"),
+    End("jQuery", ["Django"], "https://jquery.com/")
   ];
   List<End> backends = [
-    End("ExpressJS", []),
-    End("Django", ["NextJS"]),
+    End("ExpressJS", ["Flutter", "React", "NextJS", "Vue.js", "AngularJS"],
+        "http://expressjs.com/"),
+    End("Django", ["NextJS", "React", "AngularJS", "jQuery"],
+        "https://www.djangoproject.com/"),
+    End("Laravel", ["Vue.js"], "https://laravel.com/"),
+    End("CakePHP", [], "https://cakephp.org/"),
+    End("Flask", ["React", "Vue.js"], "https://flask.palletsprojects.com/"),
+    End("Ruby on Rails", [], "https://rubyonrails.org/")
   ];
   End? selectedFrontEnd;
   End? selectedBackEnd;
@@ -106,15 +116,26 @@ class _DevelopPageState extends State<DevelopPage> {
             color: const Color(0xFF809BCE),
             child: Column(
               children: [
+                SizedBox(
+                  height: 20,
+                ),
                 Text(
                   "Popular frameworks",
                   style: Theme.of(context).textTheme.headline6,
                 ),
                 Text(
-                    "Here are the best frontend and backend frameworks we have found.",
+                    "Here are the best and easiest to use frameworks in the industry.",
                     style: Theme.of(context).textTheme.headline5),
+                Padding(
+                  padding: const EdgeInsets.only(left: 200, right: 200),
+                  child: Text(
+                    "The best way to learn these frameworks is to visit their official website and just get started learning, or search up some youtube tutorials and start there. Either way, these will make development a breeze. Practicing with them with your team before the hackathon rather than during it will be incredibly helpful.",
+                    style: Theme.of(context).textTheme.bodyText1,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
                 Container(
-                  height: 800,
+                  height: 600,
                   padding: EdgeInsets.only(top: 25),
                   child: Row(
                     children: [
@@ -137,14 +158,14 @@ class _DevelopPageState extends State<DevelopPage> {
                                 )),
                                 const Center(
                                     child: Text(
-                                  "A frontend is what your user will see. Click on any frontend to select it. Doing so will highlight specific backends that might be easier to use with that frontend.",
+                                  "A frontend is what your user will see. Click on any frontend to select it. Doing so will highlight specific backends that might be easier to use with that frontend. Click on the selected frontend again to open up the frontend's home page to learn more.",
                                   textAlign: TextAlign.center,
                                 )),
                                 SizedBox(
                                   height: 20,
                                 ),
                                 SizedBox(
-                                  height: 500,
+                                  height: 350,
                                   child: ListView.separated(
                                     itemCount: frontends.length,
                                     itemBuilder: (context, index) {
@@ -208,14 +229,14 @@ class _DevelopPageState extends State<DevelopPage> {
                                 )),
                                 const Center(
                                     child: Text(
-                                  "Backends communicate with your front end. Backends will make any needed connections to your database(s) and perform intensive processing, so the user's device doesn't have to. Backends often contain sensitive credentials that you should make sure stay private. These backends are some of the best and easiest to use.",
+                                  "A backend makes any connections to your database(s) or private servers, so the user's device doesn't have to. Backends often contain sensitive credentials that you should make sure stay private. These backends are some of the best and easiest to use.",
                                   textAlign: TextAlign.center,
                                 )),
                                 SizedBox(
                                   height: 20,
                                 ),
                                 SizedBox(
-                                  height: 500,
+                                  height: 350,
                                   child: ListView.separated(
                                     itemCount: backends.length,
                                     itemBuilder: (context, index) {
@@ -259,6 +280,14 @@ class _DevelopPageState extends State<DevelopPage> {
                     ],
                   ),
                 ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(DeployPage.route);
+                  },
+                  child: const Text(
+                      'Made your project? Here\'s how to deploy it so anyone can use it',
+                      style: TextStyle(color: Colors.white)),
+                ),
               ],
             ),
           )
@@ -271,9 +300,11 @@ class _DevelopPageState extends State<DevelopPage> {
     setState(() {
       for (int i = 0; i < frontends.length; i++) {
         if (i == index) {
-          frontends[i].selected = !frontends[i].selected;
           if (frontends[i].selected) {
+            launch(frontends[i].url);
+          } else {
             selectedFrontEnd = frontends[i];
+            frontends[i].selected = true;
           }
         } else {
           frontends[i].selected = false;
@@ -286,9 +317,11 @@ class _DevelopPageState extends State<DevelopPage> {
     setState(() {
       for (int i = 0; i < backends.length; i++) {
         if (i == index) {
-          backends[i].selected = !backends[i].selected;
           if (backends[i].selected) {
+            launch(backends[i].url);
+          } else {
             selectedBackEnd = backends[i];
+            backends[i].selected = true;
           }
         } else {
           backends[i].selected = false;
@@ -300,7 +333,8 @@ class _DevelopPageState extends State<DevelopPage> {
 
 class End {
   final String name;
+  final String url;
   var selected = false;
   List<String> associatedEnds;
-  End(this.name, this.associatedEnds);
+  End(this.name, this.associatedEnds, this.url);
 }
