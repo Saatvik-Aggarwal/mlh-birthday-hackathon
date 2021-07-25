@@ -240,7 +240,7 @@ class _DesignPageState extends State<DesignPage> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                child: Text("Got your visual?",
+                child: Text("Got your design?",
                     style: Theme.of(context).textTheme.headline6),
               ),
             ),
