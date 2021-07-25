@@ -19,6 +19,15 @@ class _IdeaPageState extends State<IdeaPage> {
         body: Center(
           child: ListView(
             children: [
+              Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 500,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      fit: BoxFit.fill,
+                      image: AssetImage("images/thinkofyouridea.png"),
+                    ),
+                  )),
               Center(
                   child: Text('Reach Deep!',
                       style: Theme.of(context).textTheme.headline6)),
