@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 import 'appbar.dart';
 
 class DevelopPage extends StatefulWidget {
@@ -12,14 +12,22 @@ class DevelopPage extends StatefulWidget {
 
 class _DevelopPageState extends State<DevelopPage> {
   List<End> frontends = [
-    End("Flutter", []),
-    End("ReactJS", ["Django"]),
-    End("React Native", []),
-    End("NextJS", [])
+    End("Flutter", ["ExpressJS"], "https://flutter.dev"),
+    End("React", ["Django", "ExpressJS"], ""),
+    End("NextJS", ["ExpressJS"], ""),
+    End("Vue.js", ["ExpressJS"], ""),
+    End("Angular", ["ExpressJS"], ""),
+    End("jQuery", ["ExpressJS"], "")
   ];
   List<End> backends = [
-    End("ExpressJS", []),
-    End("Django", ["NextJS"]),
+    End("ExpressJS",
+        ["Flutter", "React", "NextJS", "Vue.js", "Angular", "jQuery"], ""),
+    End("Django", ["NextJS", "React", "Angular", "jQuery"],
+        "https://www.djangoproject.com/"),
+    End("Laravel", [], ""),
+    End("CakePHP", [], ""),
+    End("Flask", [], ""),
+    End("Ruby on Rails", [], "")
   ];
   End? selectedFrontEnd;
   End? selectedBackEnd;
@@ -271,9 +279,11 @@ class _DevelopPageState extends State<DevelopPage> {
     setState(() {
       for (int i = 0; i < frontends.length; i++) {
         if (i == index) {
-          frontends[i].selected = !frontends[i].selected;
           if (frontends[i].selected) {
+            launch(frontends[i].url);
+          } else {
             selectedFrontEnd = frontends[i];
+            frontends[i].selected = true;
           }
         } else {
           frontends[i].selected = false;
@@ -286,9 +296,11 @@ class _DevelopPageState extends State<DevelopPage> {
     setState(() {
       for (int i = 0; i < backends.length; i++) {
         if (i == index) {
-          backends[i].selected = !backends[i].selected;
           if (backends[i].selected) {
+            launch(backends[i].url);
+          } else {
             selectedBackEnd = backends[i];
+            backends[i].selected = true;
           }
         } else {
           backends[i].selected = false;
@@ -300,7 +312,8 @@ class _DevelopPageState extends State<DevelopPage> {
 
 class End {
   final String name;
+  final String url;
   var selected = false;
   List<String> associatedEnds;
-  End(this.name, this.associatedEnds);
+  End(this.name, this.associatedEnds, this.url);
 }
